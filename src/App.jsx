@@ -1,17 +1,19 @@
-import { useState } from 'react'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/loginPage";
+import UserDashboard from "./pages/UserDashboard";
+import AdminDashboard from "./pages/AdminDashboard";
 
-import LoginPage from './pages/loginPage'
-import UserDashboard from './pages/UserDashboard'
-import AdminDashboard from './pages/AdminDashboard'
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <AdminDashboard />
-      
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/user" element={<UserDashboard />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;

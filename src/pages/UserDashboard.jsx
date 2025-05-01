@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const UserDashboard = () => {
   const [blogs, setBlogs] = useState([]);
@@ -42,6 +43,7 @@ const UserDashboard = () => {
         </div>
       </div>
     </div>
+    <Footer/>
     </>
   );
 };

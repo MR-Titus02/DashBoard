@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,8 @@ const LoginPage = () => {
     role: "user",
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -15,14 +19,21 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Logging in with:", formData);
-    // login logic here
+
+    // You can add login validation logic here
+
+    // Redirect based on role
+    if (formData.role === "admin") {
+      navigate("/admin");
+    } else {
+      navigate("/user");
+    }
   };
 
   return (
     <>
     <Header/>
-    <div className="h-200 flex items-center justify-center bg-gray-100">
+    <div className="min-h-199 flex items-center justify-center bg-gray-100">
       <form
         onSubmit={handleSubmit}
         className="bg-white p-8 rounded-2xl shadow-md w-full max-w-sm"
@@ -83,6 +94,7 @@ const LoginPage = () => {
         </button>
       </form>
     </div>
+    <Footer/>
     </>
   );
 };

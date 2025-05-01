@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 const AdminDashboard = () => {
   const [blogs, setBlogs] = useState([]);
   const [formData, setFormData] = useState({ title: "", content: "" });
@@ -44,6 +45,8 @@ const AdminDashboard = () => {
   };
 
   return (
+    <>
+    <Header/>
     <div className="min-h-screen bg-gray-100 py-10 px-4">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8">Admin Dashboard</h1>
@@ -119,6 +122,8 @@ const AdminDashboard = () => {
         )}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

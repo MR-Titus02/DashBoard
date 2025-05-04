@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        {/* Logo */}
+        
         <Link to="/" className="flex items-center gap-2">
           <img
             src="https://readymadeui.com/readymadeui-short.svg"
@@ -21,14 +21,14 @@ function Header() {
           <Link to="/feature" className="hover:text-yellow-300 transition">Features</Link>
           <Link to="/blog" className="hover:text-yellow-300 transition">Blog</Link>
           <Link to="/about" className="hover:text-yellow-300 transition">About</Link>
-        </nav>
 
-        {/* Mobile Menu (optional) */}
-        <button className="md:hidden">
-          <svg className="w-6 h-6 fill-white" viewBox="0 0 20 20">
-            <path d="M3 6h14M3 12h14M3 18h14" />
-          </svg>
-        </button>
+          <select className="bg-white text-gray-800 rounded-lg px-4 py-2">
+            <option value="">Current</option>
+            <option><Link to="/">Logout</Link></option>
+          </select>
+
+        </nav>
+        
       </div>
     </header>
   );
